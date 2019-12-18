@@ -19,6 +19,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        // Modifiers can be added to change the device.
         ContentView()
     }
 }
