@@ -11,8 +11,23 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        // Line break is \n
-        Text("Hello, World! \n\nHello World!")
+        VStack {
+            HStack {
+                // Line break is \n
+                Text("Hello, World! \n\nHello World!").foregroundColor(Color.blue)
+                }.background(Color.green)
+                .offset(x: 0, y: 250)
+            
+            Spacer()
+            
+            HStack {
+                
+                Text("Hello!")
+                
+                }.background(Color.red)
+                .offset(x: 0, y: -250)
+        }
+        
         
     }
 }
