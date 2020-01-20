@@ -10,32 +10,45 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+                    
         
-        VStack {
-            HStack {
-                // Line break is \n
-                Text("Hello, World! \n\nHello World!").foregroundColor(Color.blue)
-                }.background(Color.green)
-                .offset(x: 0, y: 250)
+        ZStack {
             
-            Spacer()
+            LinearGradient(
+                gradient: Gradient(colors: [ContentView.self.gradientStart, ContentView.self.gradientEnd]),
+                startPoint: .init(x: 0.5, y: 0),
+                endPoint: .init(x: 0.5, y: 0.6)).edgesIgnoringSafeArea(.all)
             
-            HStack {
+            VStack {
+                HStack {
+                    // Line break is \n
+                    Text("Hello, World! \n\nHello World!").foregroundColor(Color.blue)
+                    }.background(Color.green)
+                    .offset(x: 0, y: 250)
                 
-                Text("Hello!")
+                Spacer()
                 
-                }.background(Color.red)
-                .offset(x: 0, y: -250)
+                HStack {
+                    
+                    Text("Hello!")
+                    
+                    }.background(Color.red)
+                    .frame(minWidth: 0, idealWidth: .infinity, maxWidth: 0, minHeight: 0, idealHeight: .infinity, maxHeight: 500, alignment: .center)
+            }
+            
         }
         
-        
     }
+    
+    static let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
+    static let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 120.0 / 255)
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         // Modifiers can be added to change the device.
         ContentView()
-        // TODO: Add modifiers
+        
     }
 }
